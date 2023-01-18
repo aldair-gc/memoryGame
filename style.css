@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #484;
+  font-family: monospace;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  color: #fff;
+}
+
+#board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  height: 100%;
+  padding: 20px;
+  margin: 20px;
+  background-color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.card {
+  --size: calc((100% - (var(--matrix) * 10px)) / var(--matrix));
+  position: relative;
+  font-size: calc(50vw / var(--matrix));
+  height: var(--size);
+  width: var(--size);
+  border: 1px solid #585;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 4px #555;
+  overflow: hidden;
+  transform: rotateY(180deg);
+  transition: transform 0.3s linear;
+  background-color: darkseagreen;
+  flex: 0 1 auto;
+}
+
+.cardpic {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  transform: rotateY(180deg);
+  transition: transform 0.3s linear;
+  backface-visibility: hidden;
+}
+
+header {
+  display: flex;
+  margin: 15px 30px;
+  height: 60px;
+  align-items: center;
+}
+
+#config {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: auto;
+  font-size: 1.3em;
+}
+
+#points {
+  text-align: right;
+  font-size: 1.1em;
+  flex: 1 0 auto;
+}
+
+#size {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 25px;
+  width: 60px;
+  background: #ffffff55;
+  margin: 0 -20px;
+}
+
+.round-button {
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  border: none;
+  box-shadow: 0 0 4px #555;
+  font-size: 25px;
+  color: #585;
+  overflow: hidden;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+}
+
+.button {
+  border-radius: 5px;
+  border: none;
+  width: 100px;
+  height: 40px;
+  color: #585;
+  font-size: 14px;
+  cursor: pointer;
+}

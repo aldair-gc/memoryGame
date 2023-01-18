@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <title>Memory Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Memory Game</h1>
+      <div id="points">
+        <div>score: <span id="score">0</span></div>
+        <div>record: <span id="record">0</span></div>
+      </div>
+    </header>
+    <div id="config">
+      Size:
+      <button id="size-bigger" class="round-button">+</button>
+      <b id="size">16</b>
+      <button id="size-smaller" class="round-button">-</button>
+    </div>
+    <div id="board">
+      <!-- All cards will be injected here -->
+    </div>
+    <div class="buttons">
+      <button id="newGame" class="button">New Game</button>
+      <button id="reset" class="button">Reset</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
