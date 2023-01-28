@@ -21,7 +21,7 @@ function addCardsListeners() {
         if (selected[0][0] !== selected[1][0] && selected[0][1] === selected[1][1]) {
           score.innerText = parseInt(score.innerText) + 1;
           localStorage.setItem("memoryGameScore", parseInt(score.innerText) + 1);
-          hideSolved();
+          keepSolvedShown();
           if (parseInt(score.innerText) > parseInt(record.innerText)) {
             record.innerText = score.innerText;
             localStorage.setItem("memoryGameRecord", parseInt(score.innerText));
@@ -39,11 +39,11 @@ function addCardsListeners() {
   }
 }
 
-function hideSolved() {
+function keepSolvedShown() {
   const cards = document.querySelectorAll(".card");
   for (c of cards) {
     if (c.style.transform === "rotateY(0deg)") {
-      c.style.backgroundColor = "rgb(238, 255, 238)";
+      c.firstElementChild.style.backgroundColor = "rgb(238, 255, 238)";
     }
   }
 }
@@ -113,6 +113,7 @@ const sizeList = [4, 16, 36, 64];
 function setSize(size) {
   document.querySelector("#size").innerText = size;
   createBoard([...memoryGameItens], size);
+  selected = [];
 }
 
 sizeBigger.addEventListener("click", () => {
@@ -139,6 +140,7 @@ sizeSmaller.addEventListener("click", () => {
 document.querySelector("#reset").addEventListener("click", () => {
   document.querySelector("#score").innerText = "0";
   document.querySelector("#record").innerText = "0";
+  selected = [];
 });
 
 //save record locally

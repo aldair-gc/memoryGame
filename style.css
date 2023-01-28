@@ -13,31 +13,39 @@ body {
   width: 100vw;
   overflow: hidden;
   color: #fff;
+  padding: 20px;
+}
+
+#container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 
 #board {
+  height: 100%;
+  max-width: 100vh;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
-  height: 100%;
   padding: 20px;
-  margin: 20px;
-  background-color: white;
-  border-radius: 20px;
   cursor: pointer;
-  overflow: hidden;
 }
 
 .card {
   --size: calc((100% - (var(--matrix) * 10px)) / var(--matrix));
   position: relative;
-  font-size: calc(50vw / var(--matrix));
   height: var(--size);
   width: var(--size);
   border: 1px solid #585;
   border-radius: 10px;
-  padding: 20px;
   box-shadow: 0 0 4px #555;
   overflow: hidden;
   transform: rotateY(180deg);
@@ -47,19 +55,23 @@ body {
 }
 
 .cardpic {
+  --max-font-vw: calc((100vw / 100) * (12 - var(--matrix)));
+  --max-font-vh: calc((100vh / 100) * (8 - var(--matrix)));
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   height: 100%;
+  border-radius: 10px;
   transform: rotateY(180deg);
   transition: transform 0.3s linear;
   backface-visibility: hidden;
+  font-size: calc(var(--max-font-vw) + var(--max-font-vh));
+  background-color: rgb(207, 255, 207);
 }
 
 header {
   display: flex;
-  margin: 15px 30px;
   height: 60px;
   align-items: center;
 }
@@ -70,7 +82,7 @@ header {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  margin: auto;
+  margin-bottom: 20px;
   font-size: 1.3em;
 }
 
