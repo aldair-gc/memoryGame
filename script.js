@@ -52,7 +52,7 @@ function resetUnsolved() {
   setTimeout(() => {
     const cards = document.querySelectorAll(".card");
     for (c of cards) {
-      if (c.style.backgroundColor !== "rgb(238, 255, 238)") {
+      if (c.firstElementChild.style.backgroundColor !== "rgb(238, 255, 238)") {
         c.style.transform = "rotateY(180deg)";
         c.firstElementChild.style.transform = "rotateY(180deg)";
       }
